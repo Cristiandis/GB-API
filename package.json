@@ -1,0 +1,13 @@
+{
+  "name": "gb-api",
+  "version": "1.0.0",
+  "description": "API per bestemmie",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Cristiandis",
+  "license": "ISC",
+  "type": "module"
+}
