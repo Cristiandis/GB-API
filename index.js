@@ -349,8 +349,20 @@ const server = createServer((req, res) => {
       JSON.stringify({ bestemmia: `${random(santi)} ${random(animali)}` }),
     );
   } else {
-    res.statusCode = 404;
-    res.end(JSON.stringify({ error: "Not found" }));
+    res.setHeader("Content-Type", "text/html");
+    res.statusCode = 200;
+    res.end(`
+    <html>
+      <body>
+        <h1>Bestemmia API</h1>
+        <ul>
+          <li><a href="/bestemmia">GET /bestemmia</a> - Genera una bestemmia completa</li>
+          <li><a href="/santo">GET /santo</a> - Genera un santo</li>
+          <li><a href="/animale">GET /animale</a> - Genera un animale</li>
+        </ul>
+      </body>
+    </html>
+  `);
   }
 });
 
