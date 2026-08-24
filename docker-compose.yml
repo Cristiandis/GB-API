@@ -1,0 +1,7 @@
+services:
+  gb-api:
+    # build: .
+    image: ghcr.io/cristiandis/gb-api:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
