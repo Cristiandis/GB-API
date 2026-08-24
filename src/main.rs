@@ -373,13 +373,13 @@ async fn bestemmia() -> Json<Value> {
     json!({"bestemmia": format!("{} {}", random(SANTI), random(ANIMALI))}).into()
 }
 
+const INDEX_HTML: &str = include_str!("../index.html");
+
 async fn main_page() -> Response {
-    let bytes = std::fs::read("index.html")
-        .unwrap_or_else(|_| b"<h1>404 - pagina non trovata</h1>".to_vec());
     (
         StatusCode::OK,
         [(header::CONTENT_TYPE, "text/html; charset=utf-8")],
-        bytes,
+        INDEX_HTML,
     )
         .into_response()
 }
